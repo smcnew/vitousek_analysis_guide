@@ -18,16 +18,11 @@
   # up to before the required package was loaded. I have a few packages I almost always load, but most
   # of these would change each time depending on the project. Just remember to add packages to the list
   # up here when you want to use them.
-<<<<<<< HEAD
     pacman::p_load(tidyverse, here, plyr)
-=======
-    pacman::p_load(tidyverse, here)
->>>>>>> 06a99d08875b8c6ee84432417f32e23c76170512
       # 'here' is useful for refering to relative path names in your project directory.
 
 # Load data ----
   # here is where I would load any raw data that you have added to the project
-<<<<<<< HEAD
   # I'm reading in two files from
     #https://knowledge.domo.com/Training/Self-Service_Training/Onboarding_Resources/Fun_Sample_Datasets
     d_hero <- read.delim(here::here("1_raw_data/raw_hero_data.txt"))      #super hero attributes
@@ -73,13 +68,9 @@
             ggplot(aes(x = Height, y = Weight, color = Alignment)) +
             geom_point() + facet_wrap(~ Gender)
           
-          pdf(here::here("4_output_figures/hero_figure.pdf"), width = 5, height = 4)
-            hero_fig
-          dev.off()
           ggsave(here::here("4_output_figures/hero_figure.pdf"), device = "pdf")
           
           
           
-=======
->>>>>>> 06a99d08875b8c6ee84432417f32e23c76170512
+
     
