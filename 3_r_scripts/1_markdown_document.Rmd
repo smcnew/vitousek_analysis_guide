@@ -75,6 +75,8 @@ You can also include figures or tables generated in a script in your Markdown su
 
 ```{r}
 # Paste in a saved figure that was generated in the r script.
+
+
 ```
 
 ### Coding Style
