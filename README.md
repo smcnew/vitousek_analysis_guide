@@ -12,7 +12,7 @@ This repository is meant to accomplish two things:
 ## FAQs: 
 
 1. How do I download this to my computer? 
-- In the top right corner of the github repository page there is a button that says "fork." Click on this to make a copy of it into your own Github page. 
+- In the top right corner of the github repository page there is a button that says "use this template." Click on this to make a copy of it into your own Github page. 
 - Then, click the green "code" button in *your* repository and copy the https:// path to the repository. 
 - Open R Studio, and create a new project using the "Version Control" option. Choose "Git" and then paste the https:// path into the URL field. 
 (If you have trouble with connecting Github and your RStudio project, or if none of the above makes any sense, refer to Jenny Bryan's guide https://happygitwithr.com/)
