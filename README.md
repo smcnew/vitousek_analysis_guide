@@ -15,7 +15,7 @@ This repository is meant to accomplish two things:
 - In the top right corner of the github repository page there is a button that says "use this template." Click on this to make a copy of it into your own Github page. 
 - Then, click the green "code" button in *your* repository and copy the https:// path to the repository. 
 - Open R Studio, and create a new project using the "Version Control" option. Choose "Git" and then paste the https:// path into the URL field. 
-(If you have trouble with connecting Github and your RStudio project, or if none of the above makes any sense, refer to Jenny Bryan's guide https://happygitwithr.com/)
+(For more info refer to Jenny Bryan's guide https://happygitwithr.com/)
 
 2. What do all these "git" words mean? 
 - "Repository" - a place to organize all your files and documents for a project. In addition to keeping everything in one organized place, git repositories also provide a backup and version control. 
