@@ -21,7 +21,7 @@ This repository is meant to accomplish two things:
 - "Repository" - a place to organize all your files and documents for a project. In addition to keeping everything in one organized place, git repositories also provide a backup and version control. 
 - "Commit" - Saving your changes to your local respository. Each time you commit you have to add a little note explaining what changes you made. 
 - "Push" - Synchronizing the changes you made to the remote repository. I.e. if you make changes in your local computer and commit them, you need to push those changes to change the version that's stored on Github. If you're the only one working on your respository commit + push are usually done in one step. If you're collaborating with another user, sometimes there'll be conflicts between the "master" version and yours that need to be resolved.  
--"Fork" - Copy a version of the master repository that you will modify and then merge back to the original. Adds an extra layer of scrutiny to make sure you don't change anything important. This is important when you're working on someone else's code, or working collaboritvely on code. 
+- "Fork" - Copy a version of the master repository that you will modify and then merge back to the original. Adds an extra layer of scrutiny to make sure you don't change anything important. This is important when you're working on someone else's code, or working collaboritvely on code. 
 
 **3. What are the key documents I should look at in this repository?**
 - 3_r_scripts/1_main_script.R: an example of how to organize an R script with style formatting suggestions
