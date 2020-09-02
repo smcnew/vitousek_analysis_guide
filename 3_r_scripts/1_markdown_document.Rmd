@@ -12,6 +12,10 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(dplyr)
+library(ggplot2)
+library(here)
 ```
 
 ## Basic Project Workflow
@@ -41,7 +45,7 @@ There is no single right way to keep an organized and reproducible project direc
 * **Project**: The R project. All your code will use relative path names to the folders above. 
 
 7. Open the project and make a new r script and a new markdown document. Save them into the '3_r_scripts'
-directory. Give them short, meaningful names. If you will have multiple scripts that need to be run in order, starting the file names with numbers will keep them all in order. For all of your files, think hard about using a consistent, logical naming scheme.
+directory. Give them short, meaningful names. If you will have multiple scripts that need to be run in order, starting the file names with numbers will keep them all in order. For all of your files, think hard about using a consistent, logical naming scheme. Breaking up your code into different shorter scripts (e.g. cleaning/preprocessing, modeling, complicated plots etc.) can be helpful if you find yourself getting lost in your code. 
 
 8. Start your coding and analysis! As you create or read objects, store them into the appropriate folders above. For more complicated analysis you might have subfolders within some of the above or additional folders not listed here.
 
@@ -61,11 +65,16 @@ You can customize the output of Markdown in a lot of differnet ways using the he
 
 Here is how you embed a new figure created in Markdown with. I'm installing the Palmer Penguins package to plot with. This package has been suggested as a good alternative to the `iris` dataset in R because of RA Fisher's association with that dataset and with eugenics...plus penguins are cooler than flowers.
 
-```{r cars}
+```{r cars, warning = FALSE, message = FALSE}
 # Create a simple plot in markdown
   #install.packages("palmerpenguins")
-  #library(palmerpenguins)
-  #data(package = 'palmerpenguins')
+  library(palmerpenguins)
+  penguins <- palmerpenguins::penguins
+  ggplot(penguins, aes( x = bill_length_mm, y = bill_depth_mm)) +
+    geom_point(aes (color = species)) + 
+    scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
+    
+
 ```
 
 ### Saved Figures in Markdown
@@ -75,12 +84,14 @@ You can also include figures or tables generated in a script in your Markdown su
 
 ```{r}
 # Paste in a saved figure that was generated in the r script.
+include_graphics(here("4_output_figures", "hero_figure.pdf"))
 
 ```
 
 ### Coding Style
 
-Pick a consistent coding and annotation style and stick with it!! Try to be disciplined. It will make it much easier for you and collaborators to read your code. Think about things like snake_case or CamelCase, indentations and spaces, object names, etc. See the link below to the tidyverse style guide.
+Pick a consistent coding and annotation style and stick with it!! Try to be disciplined. It will make it much easier for you and collaborators to read your code. Think about things like snake_case or ~~CamelCase~~ (edit by Sabrina: 
+snake_case is Style Guide Approved), indentations and spaces, object names, etc. See the link below to the tidyverse style guide.
 
 ## Useful Resources
 
@@ -88,19 +99,27 @@ The internet is full of resources for learning about R and a lot are very specif
 
 ### Github & RStudio
 
-...add links
+https://happygitwithr.com/
 
 ### R Markdown
 
-...add links
+https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf
 
 ### Project Oriented Workflow
 
-...add links
+https://www.tidyverse.org/blog/2017/12/workflow-vs-script/
 
 ### Coding Style and Annotation
 
-...add links
+https://style.tidyverse.org/index.html
+
+### How to Name your Files
+https://speakerdeck.com/jennybc/how-to-name-files
+
+tl;dr: The names of your files should be 
+1. Machine readable 
+2. Human readable 
+2. Sortable 
 
 ## Ending your document
 

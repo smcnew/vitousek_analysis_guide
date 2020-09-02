@@ -11,7 +11,8 @@
 
 # Load packages ----
   # Ending the line above with four dashes of four hashtags puts the chunk into your outline below. 
-  # This makes it a lot easier to find things later in a long script.
+  # This makes it a lot easier to find things later in a long script. Another way to create sections 
+  # is with "command + shift + R" in Rstudio. 
 
   # I like to load all packages up front using 'pacman'. This way you can see right at the beginning
   # what is required and you are less likely to break your code when modifying it by moving a line
@@ -72,5 +73,6 @@
           
           
           
+
 
     
