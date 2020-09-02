@@ -1,0 +1,112 @@
+---
+title: "Vitousek Analysis Guide"
+author: "Sabrina McNew & Conor Taff"
+date: "Last Updated: `r format(Sys.time(), '%B %d %Y at %H:%M')`"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Basic Project Workflow
+
+There is no single right way to keep an organized and reproducible project directory. This is just one set of recommendations of a strategy that works for us and is at least a good starting place. 
+
+1. Make a clear plan for what will constitute a distinct 'project' and what data are needed for that project. It's easy to jump right into data analysis, but it really saves time down the road to have all the raw data organized first. Which data tables will be needed and which columns will each table need to have? Adding more data later is of course possible and sometimes unavoidable, but it can make it hard to stay organized! 
+
+2. Put together those data sets. For tree swallow data, this will likely involve compiling some data from different places and from the database. In an ideal world, this data would be as 'raw' as possible, but our 'raw' form data is often already summarized to some extent (e.g., feeding rates from rfids rather than all the raw rfid files). Save these raw data files as tab delimited text or comma separated value files.
+
+3. Go to your GitHub account and make a new repository. Give it a descriptive name that is not too long.
+
+4. Go to your repository. Click the green 'code' button and copy the link to clone the https repository. [Note that the first time you are setting GitHub & RStudio on your computer there may be some extra steps. See links to getting started below.]
+
+5. Open RStudio, choose to start a new project. Choose 'version control' and 'Git'. Put in the url you copied from your repository. Choose a folder for your project to live in on your local machine and give the project directory a name (using the repo name works fine!). 
+
+6. Now the project is on your machine and you can start making changes before pusing them back up to GitHub! Before starting analysis, I'd recommend making the following folder structure as a general rule (of course different projects might have different requirements). In this template project, all of these folders have been made already. 
+
+* **0_manuscript**: Store word/text documents when you start writing the manuscript. 
+* **1_raw_data**: Store your starting raw data. Never modify this folder contents in code.
+* **2_modified_data**: Store new data objects created by your code if needed.
+* **3_r_scripts**: Store R scripts and R Markdown code
+* **4_output_figures**: Store any figure outputs that you want to save as individual files.
+* **5_other_outputs**: Store things like tables or more complicated outputs. 
+* **9_supporting_files**: Store older files (e.g., an excel file used to make your starting data).
+* **README.md**: Created by GitHub. Text file created by GitHub. Good place to use as a 'lab notebook'.
+* **Project**: The R project. All your code will use relative path names to the folders above. 
+
+7. Open the project and make a new r script and a new markdown document. Save them into the '3_r_scripts'
+directory. Give them short, meaningful names. If you will have multiple scripts that need to be run in order, starting the file names with numbers will keep them all in order. For all of your files, think hard about using a consistent, logical naming scheme.
+
+8. Start your coding and analysis! As you create or read objects, store them into the appropriate folders above. For more complicated analysis you might have subfolders within some of the above or additional folders not listed here.
+
+9. Using the 'Git' panel in RStudio. You can commit your changes and push them back up to GitHub (with a note about what you changed). If you are collaborating with someone, you will also want to 'Pull' your project down from GitHub each time you start a new session to make sure you have the up to date version. You can commit your changes as often as you like. Maybe each time you finish a session working in R, or each time you are about to delete or modify a different section. Each time you commit will be a point that you can return to using version control on Git if you need to go back to that point later.
+
+10. As a general rule, we often write out code first in an organized and well annotated r script, and then migrate the right chunks of that code into a Markdown dowcument that puts together explanation, code, figures, and interpretation into a nice output format. There are a bunch of suggestions for organizing the code itself in the r script included here.
+
+11. The goal for following this workflow is all of the parts that go into a project (paper) are stored together in a single folder (repository) that is complete and sufficient to reproduce everything. This should make it a lot easier to upload data and code when a paper is accepted and to share contents with other people.
+
+## Creating a Markdown File
+
+The big benefit of Markdown as opposed to just using R scripts is that it is much easier to intersperse text, code, and output in a way that is readable. That makes it great for summarizing your project in a way that is good for sharing with collaborators (or your future self). The code does run slower than through a script though and if you are writing long scripts it can be a bit more of a pain to organize the r scripts into chunks for markdown. For that reason it's often easiest to have both or to work first in an r script with notes and relevant sections saved and summarized in Markdown. You can still organize the code in a similar way (loading packages and data in the first chunks, etc) as suggested in the R script template in this repository. 
+
+### Markdown Styles
+
+You can customize the output of Markdown in a lot of differnet ways using the header at the top and commands for each code chunk (html or pdf, table of contents, colors, etc). The settings above give a nice html template with code folding (visible but only on a click) and a floating table of contents, but there are lots of guides showing how to change these things. You can even include citations and use reference managers to ultimately export into word. Because you can embed code within paragraphs, it would be possible to create an entire reproducible *manuscript* in Markdown that would automatically update as you change numbers in tables etc (though that might be a goal for down the road!).
+
+Here is how you embed a new figure created in Markdown with. I'm installing the Palmer Penguins package to plot with. This package has been suggested as a good alternative to the `iris` dataset in R because of RA Fisher's association with that dataset and with eugenics...plus penguins are cooler than flowers.
+
+```{r cars}
+# Create a simple plot in markdown
+  #install.packages("palmerpenguins")
+  #library(palmerpenguins)
+  #data(package = 'palmerpenguins')
+```
+
+### Saved Figures in Markdown
+
+You can also include figures or tables generated in a script in your Markdown summary file by referencing the saved file in your project directory like this:
+
+
+```{r}
+# Paste in a saved figure that was generated in the r script.
+
+```
+
+### Coding Style
+
+Pick a consistent coding and annotation style and stick with it!! Try to be disciplined. It will make it much easier for you and collaborators to read your code. Think about things like snake_case or CamelCase, indentations and spaces, object names, etc. See the link below to the tidyverse style guide.
+
+## Useful Resources
+
+The internet is full of resources for learning about R and a lot are very specific. This is a very incomplete list of resources that we can add to for things we found particularly helpful in getting set up. These links are focused on how to get started and keep your projects organized and reproducible and not on using code or packages for specific purposes (since that is a huge topic!).
+
+### Github & RStudio
+
+...add links
+
+### R Markdown
+
+...add links
+
+### Project Oriented Workflow
+
+...add links
+
+### Coding Style and Annotation
+
+...add links
+
+## Ending your document
+
+I've started to try to always end my R Markdown summaries by printing the session info for your R environment. That way the versions of all of your packages and the list of any you have loaded will be preserved with the output. The goal is that with this info someone else should be able to take your entire directory of folders, configure their R session with the right packages (annoying but possible) and then reproduce everything exactly as you have it in your final version on their own computer without the need for any additional files and all using relative path names.
+
+```{r}
+sessionInfo()
+```
+
