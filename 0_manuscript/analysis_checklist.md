@@ -17,7 +17,7 @@ A to-do list before you submit for publication
 - [ ] The code is well-commented
 - [ ] I have printed my session info so I know what packages and versions I used 
 
-## Verification by analysis partner: 
+## Verification by analysis partner
 - [ ] The analysis can be run from start to finish on a different computer by a different person
 - [ ] The code is well-commented and readable (recognizing we all have our own style!) 
-- [ ] At least one of the main results can be reproduced independently in analysis and figure by the analysis partner
+- [ ] At least one of the main results can be produced independently in analysis and figure by the analysis partner
