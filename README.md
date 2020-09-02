@@ -9,7 +9,7 @@ This repository is meant to accomplish two things:
 2. Compile a bunch of recommendations on suggested practices and tips for things that work well in our lab with links to additional information.
 
 
-# FAQs: 
+## FAQs: 
 
 1. How do I download this to my computer? 
 - In the top right corner of the github repository page there is a button that says "fork." Click on this to make a copy of it into your own Github page. 
