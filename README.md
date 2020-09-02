@@ -25,4 +25,5 @@ This repository is meant to accomplish two things:
 
 **3. What are the key documents I should look at in this repository?**
 - 3_r_scripts/1_main_script.R: an example of how to organize an R script with style formatting suggestions
-- 3_r_scripts/1_markdown_document.Rmd: an example markdown document showing how you can integrate text and code. 
+- 3_r_scripts/1_markdown_document.Rmd: an example markdown document showing how you can integrate text and code
+- 0_manuscript/analysis_checklist.md: A checklist of essential steps to complete in every analysis before publication
